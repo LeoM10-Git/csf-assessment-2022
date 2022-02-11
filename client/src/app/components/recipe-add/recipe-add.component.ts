@@ -56,7 +56,9 @@ export class RecipeAddComponent implements OnInit {
     } as Recipe
     this.recipeService.saveRecipe(recipe).then((response) =>{
       console.log(response)
+      this.router.navigate(['']).then(() => {
+        this.recipeService.getAllRecipes().then()
+      })
     })
-    this.router.navigate(['']).then()
   }
 }
