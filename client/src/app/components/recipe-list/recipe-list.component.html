@@ -1,1 +1,12 @@
-<p>recipe-list works!</p>
+
+  <mat-nav-list>
+    <mat-list-item *ngFor="let recipe of recipes; let i = index " class="list-item" (click)="viewRecipe(recipe.id)">
+      <mat-icon color="accent">remove_red_eye</mat-icon> <span>&nbsp;&nbsp;{{ recipe.title }}</span>
+    </mat-list-item>
+  </mat-nav-list>
+  <div class="footer">
+    <button mat-fab color="primary" routerLink="/add">
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+

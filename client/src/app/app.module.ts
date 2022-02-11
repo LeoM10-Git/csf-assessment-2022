@@ -11,6 +11,7 @@ import { environment } from '../environments/environment';
 import { RecipeListComponent } from "./components/recipe-list/recipe-list.component";
 import { RecipeDetailComponent } from "./components/recipe-detail/recipe-detail.component";
 import { RecipeAddComponent } from "./components/recipe-add/recipe-add.component";
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { RecipeAddComponent } from "./components/recipe-add/recipe-add.component
     MaterialModule,
     ReactiveFormsModule,
     FormsModule,
+    HttpClientModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the app is stable

@@ -1,1 +1,8 @@
-<p>recipe-detail works!</p>
+<mat-card>
+    <mat-card-header class="title"> {{ title || '' | titlecase }}</mat-card-header>
+    <img src="{{ recipe.image }}" alt="image">
+    <h3>Ingredients</h3>
+    <mat-nav-list>
+      <mat-list-item *ngFor="let ingredient of ingredients; let i = index">{{ i+1 }}.&nbsp;{{ ingredient }}</mat-list-item>
+    </mat-nav-list>
+</mat-card>

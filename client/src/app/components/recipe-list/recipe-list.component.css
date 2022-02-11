@@ -1,0 +1,14 @@
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 15px 15px;
+}
+.list-item{
+  font-size:1.3rem;
+  font-family: Monospace, serif;
+}
+
+.list-item:hover{
+  border-radius: 6px;
+  background-color: lightblue;
+}
