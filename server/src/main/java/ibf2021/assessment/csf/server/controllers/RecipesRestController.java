@@ -13,7 +13,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value="/api/v0", produces= MediaType.APPLICATION_JSON_VALUE)
-@CrossOrigin
 public class RecipesRestController {
     private final RecipeService recipeService;
 
@@ -25,14 +24,4 @@ public class RecipesRestController {
     public ResponseEntity<List<Recipe>> getAllRecipes(){
         return ResponseEntity.ok(this.recipeService.getAllRecipes());
     }
-
-    @GetMapping("recipe/{id}")
-    public ResponseEntity<?> getRecipe(@PathVariable String id){
-        if (this.recipeService.getRecipeById(id).isPresent()){
-            return ResponseEntity.ok(this.recipeService.getRecipeById(id).get());
-        }else{
-            return ResponseEntity.badRequest().body("No Found");
-        }
-    }
-
 }
