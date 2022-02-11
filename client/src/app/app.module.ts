@@ -8,10 +8,16 @@ import { MaterialModule } from "./material.module";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { RecipeListComponent } from "./components/recipe-list/recipe-list.component";
+import { RecipeDetailComponent } from "./components/recipe-detail/recipe-detail.component";
+import { RecipeAddComponent } from "./components/recipe-add/recipe-add.component";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    RecipeListComponent,
+    RecipeDetailComponent,
+    RecipeAddComponent
   ],
   imports: [
     BrowserModule,
