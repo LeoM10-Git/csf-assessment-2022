@@ -22,7 +22,8 @@
         <input matInput placeholder="Enter Ingredient ... " formControlName="ingredient">
         <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
       </mat-form-field>
-        <button mat-mini-fab aria-label="button" color="warn" (click)="deleteIngredient(i)" type="button">
+        <button mat-mini-fab aria-label="button" color="warn" (click)="deleteIngredient(i)"
+                type="button" [disabled]="noIngredient | async">
           <mat-icon>delete</mat-icon>
         </button>
         <small ></small>
