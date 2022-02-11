@@ -1,8 +1,19 @@
-<mat-card>
-    <mat-card-header class="title"> {{ title || '' | titlecase }}</mat-card-header>
-    <img src="{{ recipe.image }}" alt="image">
-    <h3>Ingredients</h3>
-    <mat-nav-list>
+<mat-card class="card">
+    <mat-card-header class="title"> {{ title | titlecase }}</mat-card-header>
+    <br>
+    <img mat-card-image src="{{ image }}" alt="image" class="image">
+    <mat-card-header class="ingredient">Ingredients</mat-card-header>
+    <mat-nav-list class="list">
       <mat-list-item *ngFor="let ingredient of ingredients; let i = index">{{ i+1 }}.&nbsp;{{ ingredient }}</mat-list-item>
     </mat-nav-list>
+  <mat-card-header class="instruction">Instruction</mat-card-header>
+  <mat-card-content class="instruction-content">
+    {{recipe.instruction}}
+  </mat-card-content>
+  <div class="footer">
+    <button mat-fab color="primary" routerLink="">
+      <mat-icon>home</mat-icon>
+    </button>
+  </div>
 </mat-card>
+

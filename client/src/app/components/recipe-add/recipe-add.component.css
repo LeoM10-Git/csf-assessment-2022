@@ -1,0 +1,24 @@
+.input-field{
+  width: 80%;
+}
+.ingredients-field, .ingredients-header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.ingredients-field button{
+  margin-top: 10px;
+}
+.instruction-field{
+  width: 100%;
+}
+.image-field{
+  width: 100%;
+}
+.button-group{
+  display: flex;
+  justify-content: space-between;
+}
+.mat-card{
+  border-radius: 10px;
+}

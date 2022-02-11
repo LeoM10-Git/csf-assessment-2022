@@ -1,5 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
-
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
@@ -9,8 +8,8 @@ body {
   background-color: turquoise;
 }
 
-.container{
-  margin: 120px auto;
+.main-container{
+  margin: 20px auto;
   border-radius: 10px;
   background-color: lightcyan;
   max-width: 500px;
@@ -27,3 +26,10 @@ body {
   font-weight:bold;
   font-size:2rem;
 }
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 15px 15px;
+}
+
+

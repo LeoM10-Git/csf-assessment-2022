@@ -1,1 +1,53 @@
-<p>recipe-add works!</p>
+<form [formGroup]="form" (ngSubmit)="onSave()">
+  <mat-card class="mat-card">
+    <mat-card-title>Title</mat-card-title>
+    <mat-form-field appearance="fill">
+      <mat-label>Title</mat-label>
+      <input matInput>
+    </mat-form-field>
+    <br>
+    <br>
+    <div class="ingredients-header">
+      <mat-card-title>Ingredients</mat-card-title>
+      <button mat-mini-fab aria-label="button" color="primary" (click)="addIngredient()">
+        <mat-icon>add</mat-icon>
+      </button>
+    </div>
+
+    <div class="ingredients-field" *ngIf="index > 0">
+    <mat-form-field appearance="outline" class="input-field">
+      <mat-label>Ingredient</mat-label>
+      <input matInput placeholder="Enter Ingredient ... " >
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    </mat-form-field>
+      <button mat-mini-fab aria-label="button" color="warn" (click)="deleteIngredient()">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+
+    <br>
+    <mat-card-title>Instruction</mat-card-title>
+      <mat-form-field appearance="fill" class="instruction-field">
+        <mat-label>Instruction </mat-label>
+        <textarea matInput placeholder="Enter the instruction ... "></textarea>
+      </mat-form-field>
+    <br>
+    <br>
+    <mat-card-title>Image URL</mat-card-title>
+    <mat-form-field appearance="outline" class="image-field">
+      <mat-label>Image URL </mat-label>
+      <input matInput placeholder="Enter the image URL ... ">
+    </mat-form-field>
+
+
+    <div class="button-group">
+      <button mat-fab color="primary" routerLink="" type="button">
+        <mat-icon>home</mat-icon>
+      </button>
+      <button mat-fab color="primary" [disabled]='!form.valid' type="submit">
+        <mat-icon>task_alt</mat-icon>
+      </button>
+    </div>
+
+  </mat-card>
+</form>
