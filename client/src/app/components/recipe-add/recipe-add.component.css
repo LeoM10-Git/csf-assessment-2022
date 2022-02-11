@@ -9,6 +9,9 @@
 .ingredients-field button{
   margin-top: 10px;
 }
+.ingredients-header button{
+ margin-right: 27px;
+}
 .instruction-field{
   width: 100%;
 }

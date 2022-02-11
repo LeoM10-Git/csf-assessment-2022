@@ -14,6 +14,7 @@ export class RecipeDetailComponent implements OnInit {
   ingredients!: string[]
   title!: string
   image!: string
+  instruction!: string
 
   constructor(private route: ActivatedRoute,
               private recipeService: RecipeService) { }
@@ -21,10 +22,10 @@ export class RecipeDetailComponent implements OnInit {
   ngOnInit(): void {
     const id = this.route.snapshot.params['recipeId'];
     this.recipeService.getRecipe(id).then(recipe =>{
-      this.recipe = recipe
       this.title = recipe.title
       this.ingredients = recipe.ingredients
       this.image = recipe.image
+      this.instruction = recipe.instruction
       console.log(recipe)
     })
   }

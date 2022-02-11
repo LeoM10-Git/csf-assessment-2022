@@ -3,40 +3,44 @@
     <mat-card-title>Title</mat-card-title>
     <mat-form-field appearance="fill">
       <mat-label>Title</mat-label>
-      <input matInput>
+      <input matInput placeholder="Enter title ... " formControlName="title">
     </mat-form-field>
     <br>
     <br>
-    <div class="ingredients-header">
+      <div class="ingredients-header">
       <mat-card-title>Ingredients</mat-card-title>
-      <button mat-mini-fab aria-label="button" color="primary" (click)="addIngredient()">
+      <button mat-mini-fab aria-label="button" color="primary" (click)="addIngredient()" type="button">
         <mat-icon>add</mat-icon>
       </button>
-    </div>
+      </div>
 
-    <div class="ingredients-field" *ngIf="index > 0">
-    <mat-form-field appearance="outline" class="input-field">
-      <mat-label>Ingredient</mat-label>
-      <input matInput placeholder="Enter Ingredient ... " >
-      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-    </mat-form-field>
-      <button mat-mini-fab aria-label="button" color="warn" (click)="deleteIngredient()">
-        <mat-icon>delete</mat-icon>
-      </button>
+    <div *ngIf="index > 0" formArrayName="ingredients">
+      <div class="ingredients-field" *ngFor="let ingredientItem of ingredientItems.controls; let i = index"
+           [formGroup]="ingredientItem">
+      <mat-form-field appearance="outline" class="input-field">
+        <mat-label>Ingredient</mat-label>
+        <input matInput placeholder="Enter Ingredient ... " formControlName="ingredient">
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      </mat-form-field>
+        <button mat-mini-fab aria-label="button" color="warn" (click)="deleteIngredient(i)" type="button">
+          <mat-icon>delete</mat-icon>
+        </button>
+        <small ></small>
+      </div>
     </div>
 
     <br>
     <mat-card-title>Instruction</mat-card-title>
       <mat-form-field appearance="fill" class="instruction-field">
         <mat-label>Instruction </mat-label>
-        <textarea matInput placeholder="Enter the instruction ... "></textarea>
+        <textarea matInput placeholder="Enter the instruction ... " formControlName="instruction"></textarea>
       </mat-form-field>
     <br>
     <br>
     <mat-card-title>Image URL</mat-card-title>
     <mat-form-field appearance="outline" class="image-field">
       <mat-label>Image URL </mat-label>
-      <input matInput placeholder="Enter the image URL ... ">
+      <input matInput placeholder="Enter the image URL ... " formControlName="image">
     </mat-form-field>
 
 

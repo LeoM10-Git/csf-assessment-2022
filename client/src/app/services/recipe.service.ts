@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Recipe } from "../model/recipe";
 import { lastValueFrom } from "rxjs";
 
@@ -8,7 +8,7 @@ import { lastValueFrom } from "rxjs";
 })
 export class RecipeService {
 
-  BASE_URL = 'http://localhost:8080/api/v0/recipe'
+  BASE_URL = '/api/v0/recipe'
 
 
   constructor(private http: HttpClient) { }
@@ -19,5 +19,9 @@ export class RecipeService {
 
   getRecipe(id: string): Promise<Recipe> {
     return <Promise<Recipe>>lastValueFrom(this.http.get(`${this.BASE_URL}/${id}`))
+  }
+
+  saveRecipe(recipe: Recipe): Promise<string> {
+    return <Promise<string>>lastValueFrom(this.http.post(`${ this.BASE_URL }`, recipe))
   }
 }
